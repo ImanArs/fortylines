@@ -4,7 +4,7 @@ import { fetchAllProducts, setCategory, toggleFavoritesView, addFavorite, remove
 import { AppDispatch, RootState } from '../../store/store';
 import { Card } from '../Card';
 import styles from './styles.module.css';
-import { Product } from '../../utils/consts';
+import { Product } from '../../utils/types';
 
 export const MainPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -50,7 +50,7 @@ export const MainPage = () => {
     } else {
       setSearchedProducts([])
     }
-  }, [searchValue])
+  }, [products, searchValue])
   
   useEffect(() => {
     dispatch(fetchAllProducts());

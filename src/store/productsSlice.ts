@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { Product } from '../utils/consts';
+import { ProductsState } from './types';
+import { Product } from '../utils/types';
 
 export const fetchAllProducts = createAsyncThunk(
   'products/fetchAllProducts',
@@ -16,16 +17,6 @@ export const fetchAllProducts = createAsyncThunk(
     }
   }
 );
-
-interface ProductsState {
-  products: Product[];
-  categories: string[];
-  selectedCategory: string;
-  favorites: Product[];
-  showFavorites: boolean;
-  isLoading: boolean;
-  error: null | string;
-}
 
 const initialState: ProductsState = {
   products: [],

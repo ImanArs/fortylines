@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Product } from '../../utils/consts';
 import { RootState } from '../../store/store';
 import styles from './styles.module.css';
+import { Product } from '../../utils/types';
 
 interface Props {
   product: Product;
